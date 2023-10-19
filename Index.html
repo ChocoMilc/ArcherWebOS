@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archer Industries In-Browser OS</title> 
+    <link rel="stylesheet" href="Assets/CSS/Extra.css">
+    <link rel="stylesheet" href="Assets/CSS/Navbars.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body onload="startTime()">
+
+<!-- Top Navigation Bar -->
+<div class="topnav">
+    <a class="active" href="#home">
+        <span class="material-symbols-outlined">
+            home
+        </span>
+    </a>
+    <a href="#news">
+        <span class="material-symbols-outlined">
+            mail
+        </span>
+    </a>
+    <a href="#contact">
+        <span class="material-symbols-outlined">
+            calendar_month
+        </span>
+    </a>
+    <a href="#help">
+        <span class="material-symbols-outlined">
+            folder
+        </span>
+    </a>
+    <h1>Archer OS</h1>
+</div>
+<!-- End Topnav Bar -->
+
+<div id="txt"></div>
+
+
+<script>
+    function startTime() {
+      const today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s + "  |  ";
+      setTimeout(startTime, 1000);
+    }
+    
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+</body>
+</html>
